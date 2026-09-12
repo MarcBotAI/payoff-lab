@@ -108,6 +108,26 @@ a:hover {
   font-size: 1.05rem;
 }
 
+.how-to {
+  max-width: 36rem;
+  margin: 1.15rem auto 0;
+  text-align: center;
+}
+
+.how-to h2 {
+  margin: 0 0 0.4rem;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.how-to p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .calc-grid {
   display: grid;
   gap: 1.5rem;
@@ -347,12 +367,79 @@ a:hover {
 
 .cta {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .cta p {
   margin: 0 0 0.9rem;
   color: var(--muted);
   font-size: 0.925rem;
+}
+
+.cta-list {
+  list-style: none;
+  margin: 0 0 1.1rem;
+  padding: 0;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.cta-list li {
+  position: relative;
+  padding: 0.28rem 0 0.28rem 1.45rem;
+}
+
+.cta-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.58rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1.5px solid var(--accent);
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.cta-list li::after {
+  content: "";
+  position: absolute;
+  left: 0.36rem;
+  top: 0.72rem;
+  width: 0.28rem;
+  height: 0.16rem;
+  border-left: 1.6px solid var(--accent);
+  border-bottom: 1.6px solid var(--accent);
+  transform: rotate(-45deg);
+}
+
+.cta-price {
+  margin: 0 0 0.95rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.cta-price-note {
+  display: inline-block;
+  margin-left: 0.2rem;
+  font-weight: 400;
+  font-size: 0.82rem;
+  color: var(--subtle);
+}
+
+.btn-cta {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-cta:hover {
+  background: var(--accent-hover);
+  text-decoration: none;
+}
+
+.btn-cta:active {
+  transform: translateY(1px);
 }
 
 .site-footer {
