@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Payoff Lab — Canadian Mortgage Payoff Calculator</title>
+  <meta name="description" content="Free Canadian mortgage payoff calculator. Estimate payments, total interest, and savings from extra payments. Semi-annual compounding, CAD." />
+  <meta name="theme-color" content="#16332e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap brand">
+      <p class="brand-name">Payoff Lab</p>
+      <p class="brand-tag">Canadian mortgage payoff calculator</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero">
+        <h1>Mortgage Payoff Calculator</h1>
+        <p>Enter your loan details to see the scheduled payment, total interest, and how an extra monthly amount shortens the term. Uses Canadian semi-annual compounding.</p>
+      </section>
+
+      <div class="calc-grid">
+        <section class="card" aria-labelledby="inputs-heading">
+          <h2 id="inputs-heading">Loan details</h2>
+          <div id="form-error" class="error-banner" role="alert"></div>
+          <form id="calc-form" novalidate>
+            <div class="field">
+              <label for="principal">Mortgage balance</label>
+              <div class="input-row">
+                <span class="input-prefix" aria-hidden="true">$</span>
+                <input id="principal" name="principal" type="number" inputmode="decimal" min="1" max="100000000" step="any" value="400000" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="rate">Annual interest rate</label>
+              <div class="input-row">
+                <input id="rate" name="rate" type="number" inputmode="decimal" min="0" max="100" step="any" value="4.79" required />
+                <span class="input-suffix" aria-hidden="true">%</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="years">Amortization (years)</label>
+              <input id="years" name="years" type="number" inputmode="decimal" min="0.1" max="50" step="any" value="25" required />
+              <span class="hint">Common Canadian amortizations are 25 or 30 years.</span>
+            </div>
+
+            <div class="field">
+              <label for="extra">Extra monthly payment</label>
+              <div class="input-row">
+                <span class="input-prefix" aria-hidden="true">$</span>
+                <input id="extra" name="extra" type="number" inputmode="decimal" min="0" step="any" value="0" />
+              </div>
+              <span class="hint">Optional. Added to the scheduled payment each month.</span>
+            </div>
+
+            <div class="field">
+              <label for="frequency">Payment frequency</label>
+              <select id="frequency" name="frequency">
+                <option value="monthly" selected>Monthly</option>
+                <option value="biweekly">Biweekly</option>
+                <option value="accelerated">Accelerated biweekly</option>
+              </select>
+              <span class="hint">Accelerated biweekly ≈ half the monthly payment, every two weeks.</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+        </section>
+
+        <section class="card results-card" aria-labelledby="results-heading" aria-live="polite">
+          <h2 id="results-heading">Payoff summary</h2>
+          <div id="results-body">
+            <p class="results-placeholder">Your payment, interest, payoff time, and extra-payment savings will appear here after you calculate.</p>
+          </div>
+        </section>
+      </div>
+
+      <p class="disclaimer">
+        Estimates only. Not financial advice. Payoff Lab is not a lender or mortgage broker.
+        Actual payments, interest, and payoff dates depend on your lender, taxes, insurance, and loan terms.
+      </p>
+
+      <section class="card cta" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">Renewal coming up?</h2>
+        <p>Grab the Canadian Mortgage Renewal Checklist — documents, lender questions, and a stay-vs-switch worksheet. Educational only, not advice.</p>
+        <a class="btn btn-ghost" href="https://marcstevens.gumroad.com/l/canadian-mortgage-renewal-checklist">Get the checklist →</a>
+        <p class="note">CAD $4.99 on Gumroad · Payoff Lab</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Payoff Lab · Estimates only</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="calculator.js" defer></script>
+</body>
+</html>
