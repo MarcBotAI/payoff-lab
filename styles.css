@@ -354,6 +354,45 @@ a:hover {
   display: block;
 }
 
+.ratehub-cta {
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.ratehub-cta h2 {
+  margin: 0 0 0.5rem;
+}
+
+.ratehub-cta p {
+  margin: 0 auto 1rem;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 0.925rem;
+}
+
+.ratehub-cta .btn-ratehub {
+  display: inline-flex;
+  width: auto;
+  min-width: min(100%, 22rem);
+  background: var(--accent);
+  color: #fff;
+}
+
+.ratehub-cta .btn-ratehub:hover {
+  background: var(--accent-hover);
+  text-decoration: none;
+}
+
+.ratehub-cta .btn-ratehub:active {
+  transform: translateY(1px);
+}
+
+.ratehub-cta .note {
+  margin: 0.85rem auto 0;
+  max-width: 34rem;
+  color: var(--subtle);
+}
+
 .disclaimer {
   margin: 0 0 1.5rem;
   padding: 0.9rem 1.1rem;
