@@ -22,9 +22,13 @@ On page load, `amazon.js` rewrites every `a[href*="amazon.ca"]` so the `tag` que
 
 ## Link rules
 
-- Base: `https://www.amazon.ca/s?k=QUERY&tag=TAG` (spaces as `+`)
+- Product pages: `https://www.amazon.ca/dp/ASIN?tag=TAG`
 - Attributes: `rel="nofollow sponsored noopener"` and `target="_blank"`
 - Required disclosure (near the section): “As an Amazon Associate I earn from qualifying purchases.”
+
+## Product data
+
+Featured picks live in `/workspace/payoff-lab-amazon-products.json` (name, blurb, ASIN, URL, image, rating, reviews, price_note, category). Image URLs are normalized to `https://m.media-amazon.com/images/I/<filename>`.
 
 ## Section placement
 
